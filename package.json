@@ -1,0 +1,69 @@
+{
+  "name": "react-svg-chart",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN credentials.html",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "npm run compile && npm run less",
+    "compile": "BABEL_DISABLE_CACHE=1 babel -d lib/ src/",
+    "less": "lessc src/styles/styles.less lib/styles.css",
+    "watch": "rm -rf lib && NODE_ENV=development nodemon --watch src --exec npm run build",
+    "develop": "cd ./develop; npm run dev",
+    "dev": "npm run watch & npm run develop",
+    "lint": "eslint src",
+    "test:flow": "flow check --show-all-errors src",
+    "coverage:flow": "flow-coverage-report"
+  },
+  "author": "kostrov@gmail.com",
+  "flow-coverage-report": {
+    "includeGlob": [
+      "src/**/*.js"
+    ],
+    "excludeGlob": [
+      "node_modules/**"
+    ]
+  },
+  "nodemonConfig": {
+    "ext": ".js, .less",
+    "delay": 1000
+  },
+  "pre-commit": {
+    "run": [
+      "lint",
+      "test:flow"
+    ],
+    "colors": false,
+    "silent": false
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-react-transform": "^3.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "eslint": "^5.2.0",
+    "eslint-plugin-async-await": "^0.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-react": "^7.10.0",
+    "flow-bin": "^0.77.0",
+    "flow-coverage-report": "^0.5.0",
+    "flow-runtime": "^0.17.0",
+    "flow-runtime-validators": "^0.17.0",
+    "less": "^3.8.0",
+    "nodemon": "^1.18.3",
+    "pre-commit": "^1.2.2"
+  },
+  "dependencies": {
+    "babel-preset-stage-2": "^6.24.1",
+    "d3-ease": "^1.0.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}

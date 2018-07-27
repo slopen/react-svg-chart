@@ -1,0 +1,44 @@
+{
+  "name": "react-svg-chart-develop",
+  "version": "0.0.1",
+  "license": "SEE LICENSE IN <filename>",
+  "scripts": {
+    "dev:client": "NODE_ENV=development webpack-dev-server --noinfo --config scripts/webpack/client.js --hot",
+    "start": "yarn run dev",
+    "build": "NODE_ENV=production webpack --progress --config scripts/webpack/client.js -d",
+    "dev": "yarn run dev:client"
+  },
+  "author": "kostrov@gmail.com",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-react-transform": "^3.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "config": "^1.30.0",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "json-loader": "^0.5.7",
+    "less": "^3.8.0",
+    "less-loader": "^4.1.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^4.5.2",
+    "process-env": "^1.1.0"
+  }
+}
